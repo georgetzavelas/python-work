@@ -1,0 +1,9 @@
+Download install WinPython 2.7
+pip install robotframework
+pip install robotframework-selenium2library
+https://sites.google.com/a/chromium.org/chromedriver/downloads
+easy_install http://www.voidspace.org.uk/python/pycrypto-2.6.1/pycrypto-2.6.1.win-amd64-py2.7.exe
+pip install paramiko
+pip install --upgrade paramiko
+pip install robotframework-sshlibrary
+pip install robotframework-requests

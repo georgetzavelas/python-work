@@ -25,9 +25,12 @@ import os
 output_file = open('AccessAlarms.txt', 'w')
 for doc in os.listdir('.'):
 	if (doc.startswith('AccessAlarms')):
-		with open(doc, 'r') as z:
-			lines_iter = iter(z.read().splitlines())  # If z is a file, lines_iter = z works			
-			# itertools.izip() is usable, too, for a low memory footprint:
-			for date_time_order in zip(lines_iter, lines_iter, lines_iter, lines_iter):
-	 			output_file.write(','.join(date_time_order))  # "<date> <time> <order>"
-	 			output_file.write('\n')
+		with open(doc, 'rU') as z:
+			concat_lines = []
+			for line in z:
+				if line.strip():	# line is not empty
+					concat_lines.append(line.strip('\n'))
+				elif concat_lines:					
+	 				output_file.write(','.join(concat_lines))  # "<date> <time> <order>"
+	 				output_file.write('\n')
+	 				concat_lines.clear()
