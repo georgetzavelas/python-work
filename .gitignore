@@ -24,6 +24,9 @@ __pycache__/
 env/
 build/
 develop-eggs/
+/robotframework/log.html
+/robotframework/output.xml
+/robotframework/report.html
 dist/
 downloads/
 eggs/
