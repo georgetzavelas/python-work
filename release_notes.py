@@ -65,7 +65,7 @@ def get_git_commit_message_history(repo_name, since_date, until_date):
                               --since=' + since_date + ' --until=' + until_date)
     try:
         output, error = subprocess.Popen(git_log_cmd, stdout=subprocess.PIPE).communicate()
-        output_str = output.decode('ascii')
+        output_str = output.decode('utf-8')
         return output_str.strip().splitlines()
     except Exception as e:
         print("ERROR: Couldn't get git history for repo %s: %s" % (repo_name, str(e)))
@@ -76,7 +76,7 @@ def get_git_commit_history(repo_name, since_date, until_date):
                               --since=' + since_date + ' --until=' + until_date)
     try:
         output, error = subprocess.Popen(git_log_cmd, stdout=subprocess.PIPE).communicate()
-        output_str = output.decode('ascii')
+        output_str = output.decode('utf-8')
         return output_str.strip().splitlines()
     except Exception as e:
         print("ERROR: Couldn't get git history for repo %s: %s" % (repo_name, str(e)))
